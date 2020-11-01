@@ -9,6 +9,7 @@
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
+		$navtopbar = $('navtopbar'),
 		$header = $('#header'),
 		$footer = $('#footer'),
 		$main = $('#main'),
@@ -120,7 +121,7 @@
 
 				// Article already visible? Just swap articles.
 					if ($body.hasClass('is-article-visible')) {
-
+							console.log("article already active");
 						// Deactivate current article.
 							var $currentArticle = $main_articles.filter('.active');
 
@@ -158,7 +159,7 @@
 
 				// Otherwise, handle as normal.
 					else {
-
+						console.log("opening new article");
 						// Mark as visible.
 							$body
 								.addClass('is-article-visible');
@@ -306,14 +307,6 @@
 			});
 
 		// Events.
-			$body.on('click', function(event) {
-
-				// Article visible? Hide.
-					if ($body.hasClass('is-article-visible'))
-						$main._hide(true);
-
-			});
-
 			$window.on('keyup', function(event) {
 
 				switch (event.keyCode) {
@@ -350,7 +343,6 @@
 
 				// Otherwise, check for a matching article.
 					else if ($main_articles.filter(location.hash).length > 0) {
-
 						// Prevent default.
 							event.preventDefault();
 							event.stopPropagation();
