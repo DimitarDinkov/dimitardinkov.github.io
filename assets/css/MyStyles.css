@@ -1,0 +1,406 @@
+/* Created by Dimitar Dinkov */
+
+/* Global Stuff */
+
+html {
+}
+
+body {
+  background: var(--main-1);
+  background: linear-gradient(180deg, rgb(31,30,82) 0%, var(--main-1) 100%) fixed;
+  color: var(--text-1);
+  font-family: 'Open Sans';
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    transform: scale(0.80);
+    transform-origin: top;
+  }
+}
+
+:root {
+  --main-0: #232249;
+  --main-1: #2b4199;
+  --main-2: #9593D9;
+  --main-3: #E5BEED;
+  --main-4: #00A896;
+  --main-5: #02C39A;
+  --main-6: #02C39A;
+  --main-7: #bee3db;
+  --main-8: #FAA307;
+  --main-9: #FFBA08;
+  --text-0: #F8F8FF;
+  --text-1: #DADAE0;
+  --text-2: #99999E;
+  --text-3: #313133;
+  --text-4: #141414;
+}
+
+/* Parallax Background Image */
+
+.parallax-background-image {
+  /*padding: 50px;*/
+  /*background-image: url("../../assets/img/BackgroundGames.jpg");*/
+  /*background-color: rgba(0,0,0,0);*/
+  height: 25px;
+  border-radius: 15px;
+  /*background-attachment: fixed;*/
+  /*background-position: center;*/
+  /*background-repeat: repeat;*/
+  /*background-size: cover;*/
+  /*pointer-events: none;*/
+}
+
+/* Panel 1 */
+
+@media screen and (max-width: 780px) {
+  .panel-1 {
+    padding: 10px;
+    background-color: rgba(1,1,1,0.5);
+    border-radius: 25px;
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .panel-1 {
+    padding: 20px;
+    background-color: rgba(1,1,1,0.5);
+    border-radius: 25px;
+    overflow: auto;
+  }
+}
+
+.panel-1 h1 {
+  color: var(--text-0);
+  margin-bottom: 20px;
+}
+
+.panel-1 h3 {
+  color: var(--text-0);
+}
+
+/* Panel 2 */
+
+.panel-2 {
+  padding: 10px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 20px;
+  overflow: auto;
+}
+
+/* Name Banner */
+
+@media screen and (min-width: 1400px) {
+  .name-banner img {
+    width: 280px;
+    /*margin: 7%;*/
+    margin-right: 2%;
+    /*margin-top: 5vw;*/
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .name-banner img {
+    width: 20vw;
+    /*margin: 7%;*/
+    margin-right: 2%;
+    /*margin-top: 5vw;*/
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .name-banner h1 {
+    font-size: 80px;
+    margin: 7%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .name-banner h1 {
+    font-size: 6vw;
+    margin: 7%;
+  }
+}
+
+.name-banner-color-change-1 {
+  color: var(--text-0);
+}
+
+.name-banner-color-change-2 {
+  color: var(--text-0);
+}
+
+/* About Me */
+
+.about-me h2 {
+  font-size: 22px;
+}
+
+.about-me h3 {
+  font-size: 18px;
+}
+
+.about-me {
+  padding: 4vw;
+  padding-top: 0px;
+  height: 100%;
+}
+
+.about-me a {
+  color: #75d3ff;
+}
+
+/* Info Block */
+
+.info-block {
+  padding: 10px;
+  background: var(--main-4);
+  color: var(--text-0);
+  /*border: 5px solid var(--main-0);*/
+  border-radius: 25px;
+}
+
+@media screen and (min-width: 1800px) {
+  .info-block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1775px;
+  }
+}
+
+@media screen and (max-width: 1800px) and (min-width: 1100px) {
+  .info-block {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .info-block {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.info-block h1 {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 780px) {
+  .info-block h1 {
+    font-size: 6.5vw;
+  }
+}
+
+/* Resume */
+
+.resume .fa {
+  /*color: var(--text-4);*/
+  /*display: inline-block;*/
+  padding: 5px;
+  border: 5px solid var(--text-4);
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 15px;
+  transition: 0.3s;
+  font-size: 55px;
+}
+
+.resume a {
+  margin: 15px;
+}
+
+@media screen and (max-width: 780px) {
+  .resume .fa {
+    font-size: 8vw;
+  }
+}
+
+.resume .fa:hover {
+  /*color: var(--text-4);*/
+  background-color: rgba(255,255,255,0.25);
+}
+
+.resume .fa-file-pdf-o {
+  color: #ff0000;
+}
+
+.resume .fa-file-word-o {
+  color: #00a2ed;
+}
+
+.resume .fa-file-image-o {
+  color: var(--text-1);
+}
+
+/* Contact Me */
+
+.contact-me {
+}
+
+.contact-me h2 {
+  /*font-family: monospace;*/
+  color: var(--text-0);
+  font-size: 30px;
+}
+
+.contact-me a {
+  /*border: 2px solid var(--text-0);*/
+}
+
+.contact-me a:hover {
+  border: 2px solid var(--text-4);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media screen and (max-width: 780px) {
+  .contact-me h2 {
+    font-size: 3.5vw;
+  }
+}
+
+.contact-me a {
+  color: #75d3ff;
+}
+
+/* Portfolio */
+
+@media screen and (min-width: 780px) {
+  .portfolio p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .portfolio p {
+    font-size: 2.8vw;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .portfolio h3 {
+    /*font-size: 4.5vw;*/
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .portfolio h3 {
+    font-size: 3.5vw;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .portfolio h4 {
+    /*font-size: 4.5vw;*/
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .portfolio h4 {
+    font-size: 3.5vw;
+  }
+}
+
+.portfolio.panel-1 {
+  max-width: 1400px;
+  background-color: rgba(0,0,0,0.2);
+  border: 5px solid rgba(255,255,255,1);
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.game-title {
+  display: block;
+  float: left;
+  border: 2px solid var(--text-0);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.game-date {
+  float: right;
+  border: 2px solid var(--text-0);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.game-role {
+  clear: both;
+}
+
+.game-picture-left {
+  border: 5px solid white;
+}
+
+.game-picture-right {
+  border: 5px solid white;
+}
+
+@media screen and (min-width: 780px) {
+  .game-picture-right {
+    display: inline-block;
+    float: right;
+    width: 60%;
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .game-picture-right {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .game-picture-left {
+    display: inline-block;
+    float: left;
+    width: 60%;
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .game-picture-left {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+  }
+}
+
+.portfolio.btn {
+  color: var(--text-0);
+  background: rgba(0,20,0,0.3);
+  border: 2px solid var(--text-4);
+  border-radius: 6px;
+  transition-duration: 0.3s;
+}
+
+.portfolio.btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Footer */
+
+.footer {
+  padding: 2%;
+  margin-top: 60px;
+  background-color: rgba(1,1,1,0.5);
+}
+
+.footer h3 {
+  font-size: 20px;
+}
+
+.panel-1.max-width-panel {
+  max-width: 1500px;
+  margin: auto;
+}
+
