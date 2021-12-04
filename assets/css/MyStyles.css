@@ -1,4 +1,16 @@
-/* Created by Dimitar Dinkov */
+/* Span Entire Page with Body/HTML */
+
+html {
+  overflow: auto;
+  height: 50px;
+  min-height: 100%;
+}
+
+/* Custom Font */
+
+body {
+  font-family: 'Open Sans';
+}
 
 /* Font Sizes */
 
@@ -31,15 +43,15 @@
 }
 
 p {
-  font-size: 1.0em;
+  font-size: 1.25em;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3.5em;
 }
 
 h2 {
-  font-size: 1.85em;
+  font-size: 2.32em;
 }
 
 h3 {
@@ -58,424 +70,433 @@ h6 {
   font-size: 1.0em;
 }
 
-/* Global Stuff */
+/* Colors */
+
+:root {
+  --content-1: #282828;
+  --content-2: #6f6f6f;
+  --sidebar-1: #0b0b0b;
+  --sidebar-2: #333333;
+  --text-1: #d0d0d0;
+  --text-2: #bababa;
+  --text-3: #ea96ff;
+  --border-1: #8f8f8f;
+  --diamond-1: #29bfff;
+  --diamond-2: #fb35ff;
+  --diamond-3: #ff8228;
+  --diamond-4: #2bff40;
+  --diamond-5: #ff594e;
+  --diamond-6: #4950ff;
+}
+
+/* Page Wrapper */
 
 .page-wrapper {
 }
 
+/* Body */
+
 body {
-  background: var(--main-1);
-  background: linear-gradient(180deg, rgb(31,30,82) 0%, var(--main-1) 100%) fixed;
+  background: var(--content-1);
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* Sidebar */
+
+@media (max-width: 722px) {
+  .sidebar-entry {
+    display: none;
+  }
+}
+
+.sidebar-entry {
+  position: absolute;
+  width: 200px;
+  text-align: right;
+  float: left;
+  font-size: 1.5em;
   color: var(--text-1);
-  font-family: 'Open Sans';
+  /*border-top: 1px solid rgba(255,255,255,0);*/
+  /*border-bottom: 1px solid rgba(255,255,255,0);*/
+  /*border: 1px solid var(--text-1);*/
+  transition-duration: 0.0s;
+  clear: both;
+  height: 20px;
 }
 
-:root {
-  --main-0: #232249;
-  --main-1: #2b4199;
-  --main-2: #9593D9;
-  --main-3: #E5BEED;
-  --main-4: #00A896;
-  --main-5: #02C39A;
-  --main-6: #02C39A;
-  --main-7: #bee3db;
-  --main-8: #FAA307;
-  --main-9: #FFBA08;
-  --text-0: #F8F8FF;
-  --text-1: #DADAE0;
-  --text-2: #99999E;
-  --text-3: #313133;
-  --text-4: #141414;
+.sidebar-entry.sidebar-entry-scrolling-1 {
+  position: fixed;
+  transition-duration: 0s;
 }
 
-/* Parallax Background Image */
-
-.parallax-background-image {
-  /*padding: 50px;*/
-  /*background-image: url("BackgroundGames.jpg");*/
-  /*background-color: rgba(0,0,0,0);*/
-  height: 25px;
-  border-radius: 15px;
-  /*background-attachment: fixed;*/
-  /*background-position: center;*/
-  /*background-repeat: repeat;*/
-  /*background-size: cover;*/
-  /*pointer-events: none;*/
+.sidebar-entry .sidebar-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-1);
+  top: -9px;
+  user-select: none;
 }
 
-/* Singletons */
+.sidebar-entry .sidebar-real-link {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  left: 35px;
+  height: 130%;
+  border: none;
+  transition-duration: 0.3s;
+}
 
-@media screen and (min-width: 900px) {
-  .resume-contact-container {
-    display: flex;
+.sidebar-entry .sidebar-real-link:hover {
+  border: 1px solid var(--text-1);
+  transition-duration: 0.3s;
+}
+
+.sidebar-entry span {
+  position: absolute;
+  margin-right: -0.455em;
+  font-size: 1.3em;
+  top: -7.25px;
+  right: -0.4px;
+}
+
+.sidebar-entry .diamond-1 {
+  color: var(--diamond-1);
+}
+
+.sidebar-entry .diamond-2 {
+  color: var(--diamond-2);
+}
+
+.sidebar-entry .diamond-3 {
+  color: var(--diamond-3);
+}
+
+.sidebar-entry .diamond-4 {
+  color: var(--diamond-4);
+}
+
+.sidebar-entry .diamond-5 {
+  color: var(--diamond-5);
+}
+
+.sidebar-entry .diamond-6 {
+  color: var(--diamond-6);
+}
+
+/* Line Gradient */
+
+@media (max-width: 722px) {
+  .line-gradient {
+    display: none;
   }
 }
 
-@media screen and (min-width: 900px) {
-  .resume-contact-container-resume {
-    width: 50%;
+.line-gradient {
+  width: 2px;
+  height: 100%;
+  position: fixed;
+  background: var(--border-1);
+  left: 200px;
+  z-index: -1;
+}
+
+/* Content */
+
+.content-border {
+  /*border: 2px var(--border-1) solid;*/
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+@media (max-width: 722px) {
+  .content {
+    padding-left: 20px;
+    color: var(--text-1);
+    margin-right: 20px;
   }
 }
 
-@media screen and (min-width: 900px) {
-  .resume-contact-container-contact-me {
-    width: 50%;
+@media (min-width: 723px) {
+  .content {
+    padding-left: 220px;
+    color: var(--text-1);
+    margin-right: 20px;
   }
-}
-
-/* Panel 1 */
-
-@media screen and (min-width: 780px) {
-  .panel-1 {
-    padding: 0.5em;
-    background-color: rgba(1,1,1,0.5);
-    border-radius: 25px;
-    overflow: auto;
-    height: 100%;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .panel-1 {
-    padding: 0em;
-    background-color: rgba(1,1,1,0.5);
-    border-radius: 25px;
-    overflow: auto;
-    height: 100%;
-  }
-}
-
-.panel-1 h1 {
-  color: var(--text-0);
-  /*margin-bottom: 20px;*/
-}
-
-.panel-1 h3 {
-  color: var(--text-0);
-}
-
-/* Panel 2 */
-
-.panel-2 {
-  padding: 1em;
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 0;
-  height: 70%;
-}
-
-/* Name Banner */
-
-@media screen and (min-width: 1400px) {
-  .name-banner img {
-    width: 280px;
-    /*margin: 7%;*/
-    margin-right: 2%;
-    /*margin-top: 5vw;*/
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .name-banner img {
-    width: 20vw;
-    /*margin: 7%;*/
-    margin-right: 2%;
-    /*margin-top: 5vw;*/
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .name-banner h1 {
-    margin: 7%;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .name-banner h1 {
-    margin: 7%;
-  }
-}
-
-.name-banner-color-change-1 {
-  color: var(--text-0);
-}
-
-.name-banner-color-change-2 {
-  color: var(--text-0);
 }
 
 /* About Me */
 
-.about-me {
-  padding-bottom: 3rem;
-  padding-left: 25px;
-  padding-right: 25px;
-  /*height: 100%;*/
+.about-me .name-banner {
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
 
-.about-me a {
-  color: #75d3ff;
-}
-
-/* Info Block */
-
-.info-block {
-  background: var(--main-4);
-  color: var(--text-0);
-  /*border: 5px solid var(--main-0);*/
-  border-radius: 25px;
-  margin-bottom: 20px;
-}
-
-@media screen and (min-width: 1800px) {
-  .info-block:not(#resume):not(#contact-me) {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1750px;
+@media (max-width: 922px) {
+  .about-me .name-banner img {
+    width: 10em;
+    height: 10em;
   }
 }
 
-@media screen and (min-width: 1800px) {
-  .info-block:not(#resume):not(#contact-me) {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1750px;
+@media (min-width: 923px) {
+  .about-me .name-banner img {
+    width: 250px;
+    height: 250px;
   }
 }
 
-@media screen and (min-width: 1800px) {
-  .resume-contact-container-resume {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .resume-contact-container-contact-me {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .resume-contact-container {
-    /*padding: 5px;*/
-    margin-left: auto;
-    margin-right: auto;
-    width: 1750px;
-  }
-}
-
-@media screen and (max-width: 1800px) and (min-width: 1100px) {
-  .info-block {
-    padding: 5px;
+@media (max-width: 922px) {
+  .about-me .name-banner h1 {
     margin-left: 25px;
-    margin-right: 25px;
+    font-size: 2.5em;
   }
 }
 
-@media screen and (max-width: 1100px) {
-  .info-block {
-    padding: 3px;
-    margin-left: 10px;
-    margin-right: 10px;
+@media (min-width: 923px) {
+  .about-me .name-banner h1 {
+    margin-left: 25px;
+    font-size: 4.0em;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .info-block {
-    padding: 3px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+/* Contact */
+
+.contact {
+  margin-top: 100px;
+}
+
+.contact .contact-entry {
+  border-top: 1px solid var(--text-1);
+  border-bottom: 1px solid var(--text-1);
+  padding: 15px;
+  padding-left: 0px;
+  margin-bottom: 5px;
+}
+
+.contact .social-icons {
+  color: #313437;
+  text-align: left;
+}
+
+.contact .social-icons i {
+  font-size: 2.5em;
+  display: inline-block;
+  color: var(--text-1);
+  margin: 0 10px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--text-1);
+  text-align: center;
+  border-radius: 50%;
+  line-height: 60px;
+  background-color: rgba(0,0,0,0);
+  transition-duration: 0.3s;
+}
+
+.contact .social-icons i:hover {
+  background-color: rgba(0,0,0,0.6);
+  transition-duration: 0.3s;
 }
 
 /* Resume */
 
-.resume .fa {
-  /*color: var(--text-4);*/
-  /*display: inline-block;*/
-  padding: 5px;
-  border: 5px solid var(--text-4);
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 15px;
-  transition: 0.3s;
+.resumes {
+  margin-top: 100px;
 }
 
-.resume a {
-  margin: 15px;
+.resumes .resume-entry {
+  border-top: 1px solid var(--text-1);
+  border-bottom: 1px solid var(--text-1);
+  padding: 15px;
+  padding-left: 0px;
+  margin-bottom: 5px;
 }
 
-.resume .fa:hover {
-  /*color: var(--text-4);*/
-  background-color: rgba(255,255,255,0.25);
+.resumes .resume-entry h3 {
+  padding-left: 15px;
 }
 
-.resume .fa-file-pdf-o {
+.resumes .resume-entry a {
+  font-size: 2.2em;
+  display: inline-block;
+  color: var(--text-1);
+  margin: 0 10px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--text-1);
+  text-align: center;
+  border-radius: 50%;
+  line-height: 60px;
+  background-color: rgba(0,0,0,0);
+  transition-duration: 0.3s;
+}
+
+.resumes .resume-entry .fa-file-pdf-o {
   color: #ff0000;
 }
 
-.resume .fa-file-word-o {
+.resumes .resume-entry .fa-file-word-o {
   color: #00a2ed;
 }
 
-.resume .fa-file-image-o {
-  color: var(--text-1);
-}
-
-/* Contact Me */
-
-.contact-me h2 {
-  color: var(--text-0);
-}
-
-.contact-me a {
-  /*border: 2px solid var(--text-0);*/
-}
-
-.contact-me a:hover {
-  border: 2px solid var(--text-4);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.contact-me a {
-  color: #75d3ff;
+.resumes .resume-entry a:hover {
+  background-color: rgba(0,0,0,0.6);
+  transition-duration: 0.3s;
 }
 
 /* Portfolio */
 
-.portfolio.panel-1 {
-  max-width: 1400px;
-  background-color: rgba(0,0,0,0.2);
-  border: 5px solid rgba(255,255,255,1);
-  border-radius: 25px;
-  margin-bottom: 15px;
+.portfolio {
+  margin-top: 100px;
 }
 
-.portfolio-divider {
-  width: 90%;
-  text-align: center;
-  /*border-bottom: 1px solid;*/
-  line-height: 0.1em;
-  margin: auto;
-  margin-bottom: 30px;
+.portfolio-entry {
+  border-top: 1px solid var(--text-1);
+  border-bottom: 1px solid var(--text-1);
+  padding: 15px;
+  margin-bottom: 5px;
 }
 
-.portfolio a {
-  color: rgba(193,193,255,1);
-}
-
-.game-title {
-  display: block;
+.portfolio-entry .portfolio-gallery {
+  width: 30%;
+  padding: 15px;
   float: left;
-  border: 2px solid var(--text-0);
-  border-radius: 5px;
-  padding: 5px;
 }
 
-.game-date {
+.portfolio-entry .portfolio-game-title {
+  float: left;
+}
+
+.portfolio-entry .portfolio-game-date {
   float: right;
-  border: 2px solid var(--text-0);
-  border-radius: 5px;
-  padding: 5px;
 }
 
-.game-role {
+.portfolio-entry .portfolio-game-role {
   clear: both;
 }
 
-.game-picture-left {
-  border: 5px solid white;
+.portfolio-entry .portfolio-game-info {
+  clear: both;
 }
 
-.game-picture-right {
-  border: 5px solid white;
+.portfolio-entry .portfolio-game-gallery {
+  margin: 15px;
+  width: 35%;
+  display: inline-block;
+  float: right;
+  border: 2px solid var(--text-1);
 }
 
-@media screen and (min-width: 780px) {
-  .game-picture-right {
-    display: inline-block;
-    float: right;
-    width: 60%;
-    padding: 15px;
-    margin: 15px;
-  }
+.portfolio-entry .portfolio-game-high-concept {
 }
 
-@media screen and (max-width: 780px) {
-  .game-picture-right {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin: auto;
-  }
+.portfolio-entry .portfolio-game-about {
 }
 
-@media screen and (min-width: 780px) {
-  .game-picture-left {
-    display: inline-block;
-    float: left;
-    width: 60%;
-    padding: 15px;
-    margin: 15px;
-  }
+/* Education */
+
+.education {
+  margin-top: 100px;
 }
 
-@media screen and (max-width: 780px) {
-  .game-picture-left {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin: auto;
-  }
+.education .education-entry {
+  border-top: 1px solid var(--text-1);
+  border-bottom: 1px solid var(--text-1);
+  padding: 15px;
+  margin-bottom: 5px;
 }
 
-.portfolio.btn {
-  color: var(--text-0);
-  background: rgba(0,20,0,0.3);
-  border: 2px solid var(--text-4);
-  border-radius: 6px;
-  transition-duration: 0.3s;
+.education .education-school {
+  float: left;
 }
 
-.portfolio.btn:hover {
-  background: rgba(255,255,255,0.25);
+.education .education-date {
+  float: right;
 }
 
-/* Footer */
-
-@media screen and (min-width: 1000px) {
-  .footer {
-    padding: 2%;
-    margin-top: 60px;
-    background-color: rgba(1,1,1,0.5);
-    /*border-radius: 35px;*/
-  }
+.education .education-degree {
+  clear: both;
 }
 
-@media screen and (max-width: 1000px) {
-  .footer {
-    padding: 2%;
-    margin-top: 60px;
-    background-color: rgba(1,1,1,0.5);
-    /*border-radius: 0px;*/
-  }
+/* Skills */
+
+.skills {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.panel-1.max-width-panel {
-  max-width: 1500px;
-  margin: auto;
-  padding: 25px;
+.skills .skills-entry {
+  border-top: 1px solid var(--text-1);
+  border-bottom: 1px solid var(--text-1);
+  padding: 15px;
+  margin-bottom: 5px;
 }
 
-.title-extra-padding {
-  padding-left: 14px;
+/* Anchor Shifting */
+
+#anchor-about-me {
+  position: relative;
+  top: 210px;
+}
+
+#anchor-about-me-target {
+}
+
+#anchor-contact {
+  position: relative;
+  top: 17px;
+}
+
+#anchor-contact-target {
+  position: relative;
+  top: -100px;
+}
+
+#anchor-resumes {
+  position: relative;
+  top: 17px;
+}
+
+#anchor-resumes-target {
+  position: relative;
+  top: -100px;
+}
+
+#anchor-portfolio {
+  position: relative;
+  top: 17px;
+}
+
+#anchor-portfolio-target {
+  position: relative;
+  top: -123.5px;
+}
+
+#anchor-education {
+  position: relative;
+  top: 17px;
+}
+
+#anchor-education-target {
+  position: relative;
+  top: -154.5px;
+}
+
+#anchor-skills {
+  position: relative;
+  top: 17px;
+}
+
+#anchor-skills-target {
+  position: relative;
+  top: 0px;
 }
 
