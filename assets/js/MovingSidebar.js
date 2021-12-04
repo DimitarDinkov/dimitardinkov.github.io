@@ -5,14 +5,14 @@ let sidebarEntries = ['#sidebar-about-me', '#sidebar-contact', '#sidebar-resumes
 let anchorEntries = ['#anchor-about-me', '#anchor-contact', '#anchor-resumes', '#anchor-portfolio', '#anchor-education', '#anchor-skills'];
 
 // Apply positions to side bar elements based on anchor positions.
-document.addEventListener('DOMContentLoaded', function() {
+$( document ).ready(function() {
     for(let step = 0; step < sidebarEntries.length; step++)
     {
         $(sidebarEntries[step]).css("top", $(anchorEntries[step]).offset().top);
     }
     
     scrollFunction();
-}, false);
+});
 
 // Update positions on resizing window.
 window.addEventListener('resize', scrollFunction);
