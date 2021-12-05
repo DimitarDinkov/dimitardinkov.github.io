@@ -376,6 +376,7 @@ html {
   border-bottom: 1px solid var(--text-1);
   padding: 15px;
   margin-bottom: 5px;
+  overflow: auto;
 }
 
 .portfolio-entry .portfolio-game-title {
