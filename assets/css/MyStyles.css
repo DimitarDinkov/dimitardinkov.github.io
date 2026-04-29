@@ -475,6 +475,7 @@ html {
     display: inline-block;
     float: right;
     border: 2px solid var(--text-1);
+    clear: both;
   }
 }
 
